@@ -18,8 +18,11 @@ function Projects() {
 
     const handleResize = () => {
       const currentWidth = window.innerWidth;
+
+      // Check if the screen width is greater than 768px
       if (currentWidth > 768) {
-        const controller = new ScrollMagic.Controller(); // Initialize ScrollMagic controller
+        // Initialize ScrollMagic controller
+        const controller = new ScrollMagic.Controller();
 
         // GSAP animations for text movement
         gsap.set("#text2", { x: "70%" });
@@ -76,6 +79,7 @@ function Projects() {
               });
           };
 
+          // Add mousemove and mouseleave events for hover effects
           element.addEventListener("mousemove", onMouseMove);
           element.addEventListener("mouseleave", onMouseLeave);
 
@@ -85,6 +89,7 @@ function Projects() {
           };
         };
 
+        // Set up hover effects only on larger screens
         setupMouseEffects(".cnt", ".cnt img", "#b4bacf");
         setupMouseEffects(".cnt2", ".cnt2 img", "#ffbc99");
         setupMouseEffects(".cnt3", ".cnt3 img", "rgb(219, 202, 189)");
@@ -92,6 +97,19 @@ function Projects() {
         return () => {
           controller.destroy(true); // Cleanup the controller when the component unmounts
         };
+      } else {
+        // For screens smaller than 768px, remove any hover effects or image grayscale
+        const resetEffects = () => {
+          document.querySelectorAll(".cnt, .cnt2, .cnt3").forEach((el) => {
+            el.style.filter = "none";
+            el.style.backgroundColor = "#fff";
+          });
+          document.querySelector(".mouse").style.opacity = "0";
+          document.querySelector(".mouse").style.display = "none";
+        };
+
+        // Reset the effects on mobile screens
+        resetEffects();
       }
     };
 
@@ -105,7 +123,7 @@ function Projects() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, []); 
 
   return (
     <>
