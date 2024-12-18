@@ -14,13 +14,10 @@ import ScrollMagic from "scrollmagic";
 
 function Projects() {
   useEffect(() => {
-    const screenWidth = window.innerWidth;
-
     const handleResize = () => {
-      const currentWidth = window.innerWidth;
+      const screenWidth = window.innerWidth;
 
-      // Check if the screen width is greater than 768px
-      if (currentWidth > 768) {
+      if (screenWidth > 768) {
         // Initialize ScrollMagic controller
         const controller = new ScrollMagic.Controller();
 
@@ -29,19 +26,19 @@ function Projects() {
         gsap.set("#text1", { x: "-30%" });
 
         gsap.to("#text1", {
-          x: "60%", // move to the right
-          ease: "none", // linear motion
-          duration: 5, // adjust the duration for slower animation
-          yoyo: true, // reverse the animation after completion
-          repeat: -1, // repeat the animation infinitely
+          x: "60%", 
+          ease: "none",
+          duration: 5,
+          yoyo: true,
+          repeat: -1,
         });
 
         gsap.to("#text2", {
-          x: "50%", // move to the right
-          ease: "none", // linear motion
-          duration: 5, // adjust the duration for slower animation
-          yoyo: true, // reverse the animation after completion
-          repeat: -1, // repeat the animation infinitely
+          x: "50%", 
+          ease: "none",
+          duration: 5,
+          yoyo: true,
+          repeat: -1,
         });
 
         // Mouse hover effect for image grayscale and background change
@@ -75,11 +72,10 @@ function Projects() {
                 ".pack1, #home, #projects, #moreProjects, #projectsList"
               )
               .forEach((el) => {
-                el.style.backgroundColor = "#fff";
+                el.style.backgroundColor = "#fff"; // Reset background color
               });
           };
 
-          // Add mousemove and mouseleave events for hover effects
           element.addEventListener("mousemove", onMouseMove);
           element.addEventListener("mouseleave", onMouseLeave);
 
@@ -123,8 +119,7 @@ function Projects() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []); 
-
+  }, []);
   return (
     <>
       <div id="projects">
