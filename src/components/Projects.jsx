@@ -11,86 +11,100 @@ import animate3 from "../assets/animate3.png";
 import gsap from "gsap";
 import ScrollMagic from "scrollmagic";
 
+
 function Projects() {
   useEffect(() => {
     const screenWidth = window.innerWidth;
 
-    // Only run the animation logic if the screen width is greater than 768px
-    if (screenWidth > 768) {
-      const controller = new ScrollMagic.Controller(); // Initialize ScrollMagic controller
+    const handleResize = () => {
+      const currentWidth = window.innerWidth;
+      if (currentWidth > 768) {
+        const controller = new ScrollMagic.Controller(); // Initialize ScrollMagic controller
 
-      // GSAP animations for text movement
-      gsap.set("#text2", { x: "70%" });
-      gsap.set("#text1", { x: "-30%" });
+        // GSAP animations for text movement
+        gsap.set("#text2", { x: "70%" });
+        gsap.set("#text1", { x: "-30%" });
 
-      gsap.to("#text1", {
-        x: "60%", // move to the right
-        ease: "none", // linear motion
-        duration: 5, // adjust the duration for slower animation
-        yoyo: true, // reverse the animation after completion
-        repeat: -1, // repeat the animation infinitely
-      });
+        gsap.to("#text1", {
+          x: "60%", // move to the right
+          ease: "none", // linear motion
+          duration: 5, // adjust the duration for slower animation
+          yoyo: true, // reverse the animation after completion
+          repeat: -1, // repeat the animation infinitely
+        });
 
-      gsap.to("#text2", {
-        x: "50%", // move to the right
-        ease: "none", // linear motion
-        duration: 5, // adjust the duration for slower animation
-        yoyo: true, // reverse the animation after completion
-        repeat: -1, // repeat the animation infinitely
-      });
+        gsap.to("#text2", {
+          x: "50%", // move to the right
+          ease: "none", // linear motion
+          duration: 5, // adjust the duration for slower animation
+          yoyo: true, // reverse the animation after completion
+          repeat: -1, // repeat the animation infinitely
+        });
 
-      // Mouse hover effect for image grayscale and background change
-      const setupMouseEffects = (elementSelector, imgSelector, backgroundColor) => {
-        const mouseElement = document.querySelector(".mouse");
-        const element = document.querySelector(elementSelector);
-        const image = document.querySelector(imgSelector);
+        // Mouse hover effect for image grayscale and background change
+        const setupMouseEffects = (elementSelector, imgSelector, backgroundColor) => {
+          const mouseElement = document.querySelector(".mouse");
+          const element = document.querySelector(elementSelector);
+          const image = document.querySelector(imgSelector);
 
-        if (!mouseElement || !element || !image) return;
+          if (!mouseElement || !element || !image) return;
 
-        const onMouseMove = (e) => {
-          mouseElement.style.opacity = "1";
-          mouseElement.style.display = "block";
-          mouseElement.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
-          image.style.filter = "grayscale(100%)";
-          document
-            .querySelectorAll(
-              ".pack1, #home, #projects, #moreProjects, #projectsList"
-            )
-            .forEach((el) => {
-              el.style.backgroundColor = backgroundColor;
-            });
+          const onMouseMove = (e) => {
+            mouseElement.style.opacity = "1";
+            mouseElement.style.display = "block";
+            mouseElement.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+            image.style.filter = "grayscale(100%)";
+            document
+              .querySelectorAll(
+                ".pack1, #home, #projects, #moreProjects, #projectsList"
+              )
+              .forEach((el) => {
+                el.style.backgroundColor = backgroundColor;
+              });
+          };
+
+          const onMouseLeave = () => {
+            mouseElement.style.opacity = "0";
+            mouseElement.style.display = "none";
+            image.style.filter = "grayscale(0%)";
+            document
+              .querySelectorAll(
+                ".pack1, #home, #projects, #moreProjects, #projectsList"
+              )
+              .forEach((el) => {
+                el.style.backgroundColor = "#fff";
+              });
+          };
+
+          element.addEventListener("mousemove", onMouseMove);
+          element.addEventListener("mouseleave", onMouseLeave);
+
+          return () => {
+            element.removeEventListener("mousemove", onMouseMove);
+            element.removeEventListener("mouseleave", onMouseLeave);
+          };
         };
 
-        const onMouseLeave = () => {
-          mouseElement.style.opacity = "0";
-          mouseElement.style.display = "none";
-          image.style.filter = "grayscale(0%)";
-          document
-            .querySelectorAll(
-              ".pack1, #home, #projects, #moreProjects, #projectsList"
-            )
-            .forEach((el) => {
-              el.style.backgroundColor = "#fff";
-            });
-        };
-
-        element.addEventListener("mousemove", onMouseMove);
-        element.addEventListener("mouseleave", onMouseLeave);
+        setupMouseEffects(".cnt", ".cnt img", "#b4bacf");
+        setupMouseEffects(".cnt2", ".cnt2 img", "#ffbc99");
+        setupMouseEffects(".cnt3", ".cnt3 img", "rgb(219, 202, 189)");
 
         return () => {
-          element.removeEventListener("mousemove", onMouseMove);
-          element.removeEventListener("mouseleave", onMouseLeave);
+          controller.destroy(true); // Cleanup the controller when the component unmounts
         };
-      };
+      }
+    };
 
-      setupMouseEffects(".cnt", ".cnt img", "#b4bacf");
-      setupMouseEffects(".cnt2", ".cnt2 img", "#ffbc99");
-      setupMouseEffects(".cnt3", ".cnt3 img", "rgb(219, 202, 189)");
+    // Run handleResize initially to apply logic immediately
+    handleResize();
 
-      return () => {
-        controller.destroy(true); // Cleanup the controller when the component unmounts
-      };
-    }
+    // Add resize event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
