@@ -53,7 +53,10 @@ function Loader() {
     .to("#projects",{
       height: "auto",
       display: "block",
-  })
+  }).to("#small-screen-projects",{
+    height: "auto",
+    display: "block",
+})
   .to("#moreProjects",{
       height: "auto",
   })
