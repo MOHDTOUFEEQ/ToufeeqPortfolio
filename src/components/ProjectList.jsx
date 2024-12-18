@@ -3,38 +3,62 @@ import DjangoLogo from '../assets/django1-removebg-preview.png';
 import JavaScriptLogo from '../assets/JavaScript-logo.png';
 
 function rotating(elementSelector) {
-    const mouseElement = document.querySelector(".upperrotating_div");
-    const screenWidth = window.innerWidth;
-  
-    // Check if the screen resolution is greater than 768px
-    if (screenWidth > 768) {
-      const targetElement = document.querySelector(elementSelector);
-  
-      if (targetElement) {
-        targetElement.addEventListener("mousemove", function (dets) {
-          const mouseX = dets.pageX;
-          const mouseY = dets.pageY;
-          mouseElement.style.opacity = "1";
-          // Use transform for translation
-          mouseElement.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-        });
-  
-        targetElement.addEventListener("mouseleave", function () {
-          mouseElement.style.opacity = "0";
-        });
-      }
+  const mouseElement = document.querySelector(".upperrotating_div");
+  const screenWidth = window.innerWidth;
+
+  // Check if the screen resolution is greater than 768px
+  if (screenWidth > 768) {
+    const targetElement = document.querySelector(elementSelector);
+
+    if (targetElement) {
+      targetElement.addEventListener("mousemove", function (dets) {
+        const mouseX = dets.pageX;
+        const mouseY = dets.pageY;
+        mouseElement.style.opacity = "1";
+        // Use transform for translation
+        mouseElement.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+      });
+
+      targetElement.addEventListener("mouseleave", function () {
+        mouseElement.style.opacity = "0";
+      });
     }
   }
-  
-  function ProjectList() {
-    useEffect(() => {
+}
+
+function ProjectList() {
+  useEffect(() => {
+    // Check if the screen width is greater than 768px before applying the effect
+    const screenWidth = window.innerWidth;
+    if (screenWidth > 768) {
       // Initialize rotating effect on project elements
       rotating(".pr1");
       rotating(".pr2");
       rotating(".pr3");
       rotating(".pr4");
       rotating(".pr5");
-    }, []); // Run once on component mount
+    }
+
+    // Optionally, add event listener to handle resizing and applying/removing the effect dynamically
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth > 768) {
+        // Apply effect when the screen is resized to large screen size
+        rotating(".pr1");
+        rotating(".pr2");
+        rotating(".pr3");
+        rotating(".pr4");
+        rotating(".pr5");
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div id="projectsList">
       <div className="upperrotating_div">
