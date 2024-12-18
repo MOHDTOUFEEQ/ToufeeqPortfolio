@@ -104,7 +104,7 @@ function SmallScreenProjects() {
         padding: "6px 10px",
         fontSize: "0.8rem",
         color: "#000",
-        border: "1px solidrgb(0, 0, 0)",
+        border: "1px solid black",
         backgroundColor: "#fff",
         borderRadius: "5px",
         cursor: "pointer",
