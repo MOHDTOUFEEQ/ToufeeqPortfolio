@@ -198,6 +198,9 @@ html, body{
       justify-content: center;
       align-items: center;
   }
+  .mouse {
+    display: none !important;
+  }
   .abovetop h1{
       text-align: center;
       margin-bottom: 10px;
@@ -429,7 +432,9 @@ html, body{
       position: relative;
       top: -20vh;
   }
-  
+  .mouse {
+    display: none !important;
+  }
   .down i{
       font-size: .5rem;
   }
@@ -551,6 +556,7 @@ html, body{
   object-fit: fill;
   height: 110%;
   width: 108%;
+  filter: none !important;
 }
 .pack{
   overflow: hidden;
@@ -590,6 +596,7 @@ html, body{
   object-fit: fill;
   height: 120%;
   width: 108%;
+  filter: none !important;
 }
 .pack1 {
   
@@ -609,6 +616,7 @@ html, body{
   height: 110%;
   width: 108%;
   cursor: none;
+  filter: none !important;
 }
 .mouse{
   height: 40vh;

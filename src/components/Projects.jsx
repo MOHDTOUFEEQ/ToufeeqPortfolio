@@ -15,111 +15,108 @@ import ScrollMagic from "scrollmagic";
 function Projects() {
   useEffect(() => {
     const handleResize = () => {
-      const screenWidth = window.innerWidth;
+      const screenWidth = Math.min(window.innerWidth, window.screen.width);
 
-      if (screenWidth > 768) {
-        // Initialize ScrollMagic controller
-        const controller = new ScrollMagic.Controller();
-
-        // GSAP animations for text movement
-        gsap.set("#text2", { x: "70%" });
-        gsap.set("#text1", { x: "-30%" });
-
-        gsap.to("#text1", {
-          x: "60%", 
-          ease: "none",
-          duration: 5,
-          yoyo: true,
-          repeat: -1,
-        });
-
-        gsap.to("#text2", {
-          x: "50%", 
-          ease: "none",
-          duration: 5,
-          yoyo: true,
-          repeat: -1,
-        });
-
-        // Mouse hover effect for image grayscale and background change
-        const setupMouseEffects = (elementSelector, imgSelector, backgroundColor) => {
-          const mouseElement = document.querySelector(".mouse");
-          const element = document.querySelector(elementSelector);
-          const image = document.querySelector(imgSelector);
-
-          if (!mouseElement || !element || !image) return;
-
-          const onMouseMove = (e) => {
-            mouseElement.style.opacity = "1";
-            mouseElement.style.display = "block";
-            mouseElement.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
-            image.style.filter = "grayscale(100%)";
-            document
-              .querySelectorAll(
-                ".pack1, #home, #projects, #moreProjects, #projectsList"
-              )
-              .forEach((el) => {
-                el.style.backgroundColor = backgroundColor;
-              });
-          };
-
-          const onMouseLeave = () => {
-            mouseElement.style.opacity = "0";
-            mouseElement.style.display = "none";
-            image.style.filter = "grayscale(0%)";
-            document
-              .querySelectorAll(
-                ".pack1, #home, #projects, #moreProjects, #projectsList"
-              )
-              .forEach((el) => {
-                el.style.backgroundColor = "#fff"; // Reset background color
-              });
-          };
-
-          element.addEventListener("mousemove", onMouseMove);
-          element.addEventListener("mouseleave", onMouseLeave);
-
-          return () => {
-            element.removeEventListener("mousemove", onMouseMove);
-            element.removeEventListener("mouseleave", onMouseLeave);
-          };
-        };
-
-        // Set up hover effects only on larger screens
-        setupMouseEffects(".cnt", ".cnt img", "#b4bacf");
-        setupMouseEffects(".cnt2", ".cnt2 img", "#ffbc99");
-        setupMouseEffects(".cnt3", ".cnt3 img", "rgb(219, 202, 189)");
-
-        return () => {
-          controller.destroy(true); // Cleanup the controller when the component unmounts
-        };
-      } else {
-        // For screens smaller than 768px, remove any hover effects or image grayscale
+      if (screenWidth <= 768) {
+        // Reset effects on small screens
         const resetEffects = () => {
-          document.querySelectorAll(".cnt, .cnt2, .cnt3").forEach((el) => {
-            el.style.filter = "none";
+          document.querySelectorAll(".cnt img, .cnt2 img, .cnt3 img").forEach((img) => {
+            img.style.filter = "none";
+          });
+
+          document.querySelectorAll(".pack1, #home, #projects, #moreProjects, #projectsList").forEach((el) => {
             el.style.backgroundColor = "#fff";
           });
-          document.querySelector(".mouse").style.opacity = "0";
-          document.querySelector(".mouse").style.display = "none";
+
+          const mouseElement = document.querySelector(".mouse");
+          if (mouseElement) {
+            mouseElement.style.opacity = "0";
+            mouseElement.style.display = "none";
+          }
         };
 
-        // Reset the effects on mobile screens
         resetEffects();
+        return; // Stop further execution for mobile
       }
+
+      // Initialize ScrollMagic controller
+      const controller = new ScrollMagic.Controller();
+
+      // GSAP animations for text movement
+      gsap.set("#text2", { x: "70%" });
+      gsap.set("#text1", { x: "-30%" });
+
+      gsap.to("#text1", {
+        x: "60%",
+        ease: "none",
+        duration: 5,
+        yoyo: true,
+        repeat: -1,
+      });
+
+      gsap.to("#text2", {
+        x: "50%",
+        ease: "none",
+        duration: 5,
+        yoyo: true,
+        repeat: -1,
+      });
+
+      // Mouse hover effect for larger screens
+      const setupMouseEffects = (elementSelector, imgSelector, backgroundColor) => {
+        const mouseElement = document.querySelector(".mouse");
+        const element = document.querySelector(elementSelector);
+        const image = document.querySelector(imgSelector);
+
+        if (!mouseElement || !element || !image) return;
+
+        const onMouseMove = (e) => {
+          mouseElement.style.opacity = "1";
+          mouseElement.style.display = "block";
+          mouseElement.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+          image.style.filter = "grayscale(100%)";
+          document.querySelectorAll(".pack1, #home, #projects, #moreProjects, #projectsList").forEach((el) => {
+            el.style.backgroundColor = backgroundColor;
+          });
+        };
+
+        const onMouseLeave = () => {
+          mouseElement.style.opacity = "0";
+          mouseElement.style.display = "none";
+          image.style.filter = "grayscale(0%)";
+          document.querySelectorAll(".pack1, #home, #projects, #moreProjects, #projectsList").forEach((el) => {
+            el.style.backgroundColor = "#fff"; // Reset background color
+          });
+        };
+
+        element.addEventListener("mousemove", onMouseMove);
+        element.addEventListener("mouseleave", onMouseLeave);
+
+        return () => {
+          element.removeEventListener("mousemove", onMouseMove);
+          element.removeEventListener("mouseleave", onMouseLeave);
+        };
+      };
+
+      setupMouseEffects(".cnt", ".cnt img", "#b4bacf");
+      setupMouseEffects(".cnt2", ".cnt2 img", "#ffbc99");
+      setupMouseEffects(".cnt3", ".cnt3 img", "rgb(219, 202, 189)");
+
+      // Cleanup
+      return () => {
+        controller.destroy(true);
+      };
     };
 
-    // Run handleResize initially to apply logic immediately
+    // Initial run and event listener
     handleResize();
-
-    // Add resize event listener
     window.addEventListener("resize", handleResize);
 
-    // Cleanup event listener on unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
     <>
       <div id="projects">
