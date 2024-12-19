@@ -66,10 +66,10 @@ function Loader() {
       height: "auto",
   })
   .to("#talk",{
-      height: "80vh",
+      height: "95vh",
   })
   .to(".end",{
-      height: "30vh",
+      height: "34vh",
       paddingTop : "10px", 
   })
     
