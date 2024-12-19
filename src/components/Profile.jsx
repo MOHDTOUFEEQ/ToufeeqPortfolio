@@ -1,4 +1,18 @@
+import { useEffect, useState } from "react";
+
 function Profile() {
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsLargeScreen(window.innerWidth > 1024); 
+    };
+
+    checkScreenSize();
+
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
 
   return (
@@ -34,7 +48,11 @@ function Profile() {
             On the back end, I specialize in Python and Django for robust server-side development. I frequently integrate RESTful APIs and work with databases like MongoDB and MySQL to ensure scalability. My recent projects include a user-focused salon website and a pizza quality classification system leveraging NLP.
             <br />
             <br />
-            I hold certifications in Django, jQuery, and MySQL, reflecting my commitment to continuous learning. Looking ahead, I aim to master tools like Next.js and TypeScript to build innovative, future-ready applications that align with both user and business needs.
+            {isLargeScreen &&(
+              <p>
+              I hold certifications in Django, jQuery, and MySQL, reflecting my commitment to continuous learning. Looking ahead, I aim to master tools like Next.js and TypeScript to build innovative, future-ready applications that align with both user and business needs.
+              </p>
+          )}
             </p>
         </div>
       </div>

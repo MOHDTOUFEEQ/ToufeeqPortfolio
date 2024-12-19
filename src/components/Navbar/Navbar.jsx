@@ -100,7 +100,7 @@ function Navbar() {
             <div className="line2"></div>
             <div className="drop_down_menu">
               <a
-                href="https://www.linkedin.com/in/mohammed-toufeeq-956042266/"
+                href="https://www.linkedin.com/in/toufeeq-mohammed-956042266/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
