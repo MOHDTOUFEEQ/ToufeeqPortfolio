@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import DjangoLogo from '../assets/django1-removebg-preview.png';
-import JavaScriptLogo from '../assets/JavaScript-logo.png';
+import DjangoLogo from '../../assets/django1-removebg-preview.png';
+import JavaScriptLogo from '../../assets/JavaScript-logo.png';
 
 function rotating(elementSelector) {
     const mouseElement = document.querySelector(".upperrotating_div");

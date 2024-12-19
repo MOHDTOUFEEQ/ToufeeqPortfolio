@@ -1,20 +1,19 @@
 import { useEffect } from "react";
 import ScrollMagic from "scrollmagic";
-import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'; // Import ScrollMagic GSAP plugin
 import gsap from "gsap";
+import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'; // Import ScrollMagic GSAP plugin
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Developer from "./Developer";
-import Projects from "./Projects";
-import MoreProjects from "./MoreProjects";
-import ProjectList from "./ProjectList";
-import Profile from "./Profile";
-import Talk from "./Talk";
-import Footer from "./Footer";
+import Projects from "../ProjectSections/Projects";
+import Developer from "../Developer";
+import MoreProjects from "../MoreProjects";
+import ProjectList from "../ProjectsList/ProjectList";
+import Profile from "../Profile";
+import Talk from "../Form/Talk";
+import Footer from "../Footer/Footer";
 
 function Navbar() {
   useEffect(() => {
-    // GSAP Timeline for animations
     const t2 = gsap.timeline();
     t2.fromTo(
       ".link1 a, .link1 div",

@@ -18,13 +18,11 @@ function Loader() {
       delay: 3,
     });
 
-    // Make sure the spans are positioned relatively
     t2.fromTo(".centerloader span", 
       { left: "50px" },  // Starting position
-      { left: "0px", duration: 3, stagger: 0.1, ease: "elastic"  }  // End position
+      { left: "0px", duration: 3, stagger: .2, ease: "elastic"  }  // End position
     );
-    
-    
+
     t2.to(".centerloader span", {
       top: "-50px",  // animating top, you might need to ensure position is set in CSS
       duration: 2,
@@ -39,7 +37,7 @@ function Loader() {
       height: "100%",
       top: 0,
       duration: 1,
-      delay: -1,
+      delay: -1.5,
       ease: "back.in",
     });
 

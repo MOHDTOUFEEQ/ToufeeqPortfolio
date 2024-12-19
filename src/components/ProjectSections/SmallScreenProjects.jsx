@@ -1,6 +1,6 @@
-import cubetoImage from "../assets/cubeto.jpg";
-import project2Image from "../assets/project2.png";
-import salonImage from "../assets/photo-1635273051937-a0ddef9573b6.avif";
+import cubetoImage from "../../assets/cubeto.jpg";
+import project2Image from "../../assets/project2.png";
+import salonImage from "../../assets/photo-1635273051937-a0ddef9573b6.avif";
 import gsap from "gsap";
 import { useEffect } from "react";
 
@@ -94,7 +94,7 @@ function SmallScreenProject() {
         <h1 id="text1">Innovating the Web</h1>
       </div>
       <div className="text_animate2">
-        <h1 id="text2">Coding the Future</h1>
+        <h1 id="text2" style={{fontFamily:"Overpass,Serif", fontWeight:"bolder"}}>Coding the Future</h1>
       </div>
     </div>
   );
