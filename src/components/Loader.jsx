@@ -69,7 +69,7 @@ function Loader() {
       height: "95vh",
   })
   .to(".end",{
-      height: "34vh",
+      height: "30vh",
       paddingTop : "10px", 
   })
     
