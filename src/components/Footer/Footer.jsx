@@ -59,7 +59,7 @@ function Footer() {
           </div>
         </div>
         <div className="copyright">
-          <p>&copy;2023 Toufeeq. All rights reserved.</p>
+          <p>&copy;2025 Toufeeq. All rights reserved.</p>
           <p>
             <a id="removethis" href="#">
               Privacy Policy Terms of Use
