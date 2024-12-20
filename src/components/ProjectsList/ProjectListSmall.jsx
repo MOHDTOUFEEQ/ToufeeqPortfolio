@@ -71,7 +71,7 @@ function SmallScreenProjects() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "60px 15px",
+        padding: "50px 15px",
         backgroundColor: "#fff",
         borderRadius: "8px",
         boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
