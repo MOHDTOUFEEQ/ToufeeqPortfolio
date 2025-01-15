@@ -5,10 +5,10 @@ import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'; // Impo
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Projects from "../ProjectSections/Projects";
-import Developer from "../Developer";
-import MoreProjects from "../MoreProjects";
+import Developer from "./Developer";
+import MoreProjects from "./MoreProjects";
 import ProjectList from "../ProjectsList/ProjectList";
-import Profile from "../Profile";
+import Profile from "../Profile/Profile";
 import Talk from "../Form/Talk";
 import Footer from "../Footer/Footer";
 
@@ -26,59 +26,56 @@ function Navbar() {
     )
       .fromTo(
         ".line1, .line2",
-        { y: 0 }, // Start position (no offset)
+        { y: 0 }, 
         {
-          y: 22, // Move 22px down
+          y: 22, 
           duration: 2.3,
           delay: 1,
-          ease: "expo", // Optional easing
+          ease: "expo", 
         }
       )
       .fromTo(
         ".developer h1",
-        { bottom: "-140px" }, // Start position
+        { bottom: "-140px" }, 
         { bottom: "0", duration: 3, delay: -5 }
       )
       .fromTo(
         ".weblogo",
-        { left: "10vw" }, // Start position
+        { left: "10vw" }, 
         { left: "0", duration: 5, delay: -3 }
       );
 
-    // ScrollMagic Controller Initialization
     var controller = new ScrollMagic.Controller();
 
-    // Check screen width and apply ScrollMagic if larger than 768px
     const screenWidth = window.innerWidth;
 
     if (screenWidth > 768) {
-      // Profile Section Animation
+
       new ScrollMagic.Scene({
-        triggerElement: "#profile", // When we hit the profile section
-        triggerHook: 0.2, // Trigger when the profile section is 20% from the top of the viewport
-        reverse: true, // Allow reverse animation when scrolling back up
+        triggerElement: "#profile",
+        triggerHook: 0.2, 
+        reverse: true,
       })
         .setTween("#profile", {
-          backgroundColor: "#000000", // Change background to black
-          color: "#ffffff", // Change text color to white
-          textShadow: "0 0 10px rgba(230, 0, 115, 0.5)", // Optional glow effect
+          backgroundColor: "#000000", 
+          color: "#ffffff", 
+          textShadow: "0 0 10px rgba(230, 0, 115, 0.5)", 
         })
         .addTo(controller);
 
-      // Talk Section Animation (optional, in case you want another section)
       new ScrollMagic.Scene({
-        triggerElement: "#profile", // Trigger when we hit the profile section
-        triggerHook: 0.4, // Set triggerHook to 40% from top of the viewport
-        reverse: true, // Reverse the tween when scrolling back up
+        triggerElement: "#profile", 
+        triggerHook: 0.4,
+        reverse: true,
       })
         .setTween("#talk", {
-          backgroundColor: "#000000", // Change background to black
-          color: "#ffffff", // Change text color to white
-          textShadow: "0 0 8px rgba(230, 0, 115, 0.3)", // Optional glow effect
+          backgroundColor: "#000000", 
+          color: "#ffffff", 
+          textShadow: "0 0 8px rgba(230, 0, 115, 0.3)", 
         })
         .addTo(controller);
     }
-  }, []); // Empty dependency array ensures this runs only once after initial render
+  }, []); 
 
   return (
     <>

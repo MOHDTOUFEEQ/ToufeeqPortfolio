@@ -6,9 +6,7 @@ function Projects() {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1000);
 
   useEffect(() => {
-    // Debounced resize handler to avoid excessive re-renders
     const handleResize = () => {
-      // Check the actual width available, considering when the console is open
       if (window.innerWidth > 1000) {
         setIsLargeScreen(true);
       } else {
@@ -16,21 +14,19 @@ function Projects() {
       }
     };
 
-    // Set the event listener for window resize
     window.addEventListener("resize", handleResize);
 
-    // Cleanup the event listener when the component unmounts
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []); // Only run once on component mount
+  }, []); 
 
   return (
     <div>
       {isLargeScreen ? (
-        <BigScreenProject /> // Render Large Screen Component
+        <BigScreenProject /> 
       ) : (
-        <SmallScreenProjects /> // Render Small Screen Component
+        <SmallScreenProjects /> 
       )}
     </div>
   );

@@ -7,7 +7,6 @@ function rotating(elementSelector) {
     const mouseElement = document.querySelector(".upperrotating_div");
     const screenWidth = window.innerWidth;
   
-    // Check if the screen resolution is greater than 768px
     if (screenWidth > 768) {
       const targetElement = document.querySelector(elementSelector);
   
@@ -16,7 +15,7 @@ function rotating(elementSelector) {
           const mouseX = dets.pageX;
           const mouseY = dets.pageY;
           mouseElement.style.opacity = "1";
-          // Use transform for translation
+
           mouseElement.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
         });
   
@@ -28,10 +27,10 @@ function rotating(elementSelector) {
   }
 function ProjectListLarge() {
       useEffect(() => {
-        // Check if the screen width is greater than 768px before applying the effect
+
         const screenWidth = window.innerWidth;
         if (screenWidth > 768) {
-          // Initialize rotating effect on project elements
+
           rotating(".pr1");
           rotating(".pr2");
           rotating(".pr3");
@@ -39,11 +38,11 @@ function ProjectListLarge() {
           rotating(".pr5");
         }
     
-        // Optionally, add event listener to handle resizing and applying/removing the effect dynamically
+
         const handleResize = () => {
           const screenWidth = window.innerWidth;
           if (screenWidth > 768) {
-            // Apply effect when the screen is resized to large screen size
+
             rotating(".pr1");
             rotating(".pr2");
             rotating(".pr3");
@@ -54,7 +53,7 @@ function ProjectListLarge() {
     
         window.addEventListener("resize", handleResize);
     
-        // Cleanup the event listener on component unmount
+        
         return () => {
           window.removeEventListener("resize", handleResize);
         };

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import webRemovebgPreview from "../assets/web-removebg-preview.png";
+import webRemovebgPreview from "../..//assets/web-removebg-preview.png";
 import gsap from "gsap";
 import { ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/all";
 
@@ -7,7 +7,6 @@ gsap.registerPlugin(ScrollTrigger, Draggable, MotionPathPlugin);
 
 function Developer() {
   useEffect(() => {
-    // Define the animations using GSAP
     const svgAnimation = gsap.to(".svg-wrapper svg:first-child", {
       motionPath: {
         path: [
@@ -18,7 +17,7 @@ function Developer() {
       },
       transformOrigin: "50% 50%",
       duration: 2,
-      paused: true, // Animation starts paused
+      paused: true,
       onComplete: function () {
         gsap.set(".svg-wrapper svg:first-child", { opacity: 0 });
       },
@@ -35,7 +34,7 @@ function Developer() {
       transformOrigin: "50% 50%",
       duration: 2,
       delay: 0.5,
-      paused: true, // Animation starts paused
+      paused: true,
       onComplete: function () {
         gsap.set(".svg-wrapper svg:nth-child(2)", { opacity: 0 });
       },
@@ -52,7 +51,7 @@ function Developer() {
       transformOrigin: "50% 50%",
       duration: 2,
       stagger: 1,
-      paused: true, // Animation starts paused
+      paused: true,
       onComplete: function () {
         gsap.set(".svg-wrapper svg:nth-child(3)", { opacity: 0 });
       },
@@ -69,16 +68,16 @@ function Developer() {
       transformOrigin: "50% 50%",
       stagger: 1.5,
       duration: 2,
-      paused: true, // Animation starts paused
+      paused: true, 
       onComplete: function () {
         gsap.set(".svg-wrapper svg:nth-child(4)", { opacity: 0 });
       },
     });
 
-    // Trigger animation on button hover
+
     const downloadButton = document.getElementById("download-cv");
     downloadButton.addEventListener("mouseover", function () {
-      // Restart animation and set opacity back to 1
+
       gsap.set(".svg-wrapper svg", { opacity: 1 });
       svgAnimation.restart();
       svgAnimation2.restart();
@@ -163,7 +162,6 @@ function Developer() {
             </defs>
           </svg>
 
-          {/* Third SVG */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -208,7 +206,6 @@ function Developer() {
             </defs>
           </svg>
 
-          {/* Fourth SVG */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

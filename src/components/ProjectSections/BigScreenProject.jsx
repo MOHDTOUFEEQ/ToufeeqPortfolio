@@ -4,7 +4,6 @@ import screenshot3 from "../../assets/Screenshot3.png";
 import animate1 from "../../assets/animate1.png";
 import animate4 from "../../assets/animate4.png";
 import blog from "../../assets/blog.png";
-// import mystryMessage from "../../assets/mystryMessage.jpg";
 import mystryMessage from "../../assets/Mystry_Message-removebg-preview.png";
 import eCommerce from "../../assets/eCommerce.webp";
 import animate2 from "../../assets/animate2.png";
@@ -140,7 +139,6 @@ function BigScreenProject() {
         </a>
         </div>
 
-        {/* Second Project (Cuberto) */}
         <div className="cnt2"  style={{border:".5px solid rgb(141, 152, 142)"}}>
         <a className="text-decoration-none text-black" target="_blank" href="https://mystry-messages-kohl.vercel.app/">
         <div className="languages-used" style={{
@@ -171,7 +169,6 @@ function BigScreenProject() {
       </div>
 
       <div className="pack1">
-        {/* Third Project (Salon) */}
         <div className="mouse1">
           <div className="animatationbox1">
             <div className="magic_top">

@@ -1,21 +1,18 @@
 import './App.css'
 import Loader from './components/Loader'
-import Navbar from './components/Navbar/Navbar'
+import Navbar from './components/HomePage/Navbar'
 import { useEffect } from "react";
 import { gsap } from "gsap";
 
-// Register GSAP plugins (no need to import 'gsap/all' if you are only using 'gsap' and plugins)
 import { ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/all";
 
 
 function App() {
   
-  // don't forget to register plugins
   gsap.registerPlugin(ScrollTrigger, Draggable,  MotionPathPlugin); 
   useEffect(() => {
     const t2 = gsap.timeline();
   
-    // Ensure spans are visible and positioned correctly
     gsap.to(".toploader h3", {
       top: "-40px",
       duration: 2,
@@ -23,12 +20,12 @@ function App() {
     });
 
     t2.fromTo(".centerloader span", 
-      { left: "50px" },  // Starting position
-      { left: "0px", duration: 3, stagger: .2, ease: "elastic"  }  // End position
+      { left: "50px" },  
+      { left: "0px", duration: 3, stagger: .2, ease: "elastic"  } 
     );
 
     t2.to(".centerloader span", {
-      top: "-50px",  // animating top, you might need to ensure position is set in CSS
+      top: "-50px", 
       duration: 2,
     });
 
