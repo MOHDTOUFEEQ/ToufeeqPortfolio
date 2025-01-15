@@ -301,7 +301,7 @@ html, body{
   }
   .pack .cnt2{
       height: 44vh;
-      width: 78vw;
+      width: 70vw;
       margin: 0 auto;
   }
   .letstalk{
@@ -546,6 +546,7 @@ html, body{
 .cnt{
   height: 104vh;
   width: 40%;
+  background-color: #ffffff;
   border-radius: 50px;
   left: 6vw;
   cursor: none;
@@ -583,9 +584,9 @@ html, body{
   align-items: flex-end;
 }
 .cnt2{
-  width: 25%;
-  height: 60vh;
-  /* background-color: red; */
+  width: 30%;
+  min-height: 81vh;
+  background-color: #e7e6ee;
   overflow: hidden;
   border-radius: 50px;
   cursor: none;
@@ -610,6 +611,7 @@ html, body{
   border-radius: 50px;
   width: 35%;
   height: 90vh;
+  background-color: #ffffff;
 }
 .cnt3 img{
   object-fit: fill;

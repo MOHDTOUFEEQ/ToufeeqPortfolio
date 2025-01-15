@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import DjangoLogo from '../../assets/django1-removebg-preview.png';
 import JavaScriptLogo from '../../assets/JavaScript-logo.png';
+import nextJs from '../../assets/nextJs.png';
 
 function rotating(elementSelector) {
     const mouseElement = document.querySelector(".upperrotating_div");
@@ -114,9 +115,9 @@ function ProjectListLarge() {
            >
              <div className="flex">
                <div className="firstproject_left">
-                 <img className="js_photo" src={JavaScriptLogo} alt="UWL Film Society" />
+                 <img className="js_photo" src={nextJs} alt="UWL Film Society" />
                  <i className="fa-solid fa-minus"></i>
-                 <span className="project_name">UWL Film Society</span>
+                 <span className="project_name">Mystry Messages</span>
                </div>
                <div className="firstproject_right">
                  <button>Click to preview</button>
