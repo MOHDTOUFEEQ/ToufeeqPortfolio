@@ -1492,3 +1492,9 @@ svg {
 .more-info button:hover {
   background-color: #ffffff;
 }
+.project_languages {
+  margin-left: 10px;
+  font-size: 0.9rem;
+  color: gray;
+  font-style: italic;
+}

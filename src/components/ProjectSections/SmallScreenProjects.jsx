@@ -1,21 +1,22 @@
 import blog from "../../assets/blog.png";
 import mystryMessage from "../../assets/Mystry_Message-removebg-preview.png";
-import eCommerce from "../../assets/eCommerce.webp";
+import eCommerce from "../../assets/Instagram_DP.jpeg";
 import gsap from "gsap";
 import { useEffect } from "react";
 
 const projectLanguages = {
-  blog: ["React", "Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "React Hook Form", "NextAuth"],
-  mystryMessages: ["JavaScript", "React", "Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "React Hook Form", "Next Auth"],
-  eCommerce: ["HTML", "CSS", "BOOTSTRAP", "JQUERY", "PYTHON", "DJANGO"],
+  blog: ["HTML", "CSS","Tailwind CSS","JavaScript", "React.js","React Hook Form", "Appwrite", "JWT (JSON Web Token)"],
+  mystryMessages:[
+    "JavaScript", "React", "Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "React Hook form", "Next Auth"
+  ],
+  eCommerce:["JavaScript", "React.js","React Hook Form", "Appwrite", "TawilWind"],
 };
-
 function SmallScreenProject() {
   useEffect(() => {
     gsap.set("#text2", { x: "70%" });
     gsap.set("#text1", { x: "-30%" });
-    gsap.to("#text1", { x: "60%", ease: "none", duration: 5, yoyo: true, repeat: -1 });
-    gsap.to("#text2", { x: "50%", ease: "none", duration: 5, yoyo: true, repeat: -1 });
+    gsap.to("#text1", { x: "60%", ease: "none", duration: 3, yoyo: true, repeat: -1 });
+    gsap.to("#text2", { x: "50%", ease: "none", duration: 3, yoyo: true, repeat: -1 });
   }, []);
 
   const projects = [
@@ -34,10 +35,10 @@ function SmallScreenProject() {
       languages: projectLanguages.mystryMessages,
     },
     {
-      title: "E-Commerce",
+      title: "Instagram Clone",
       imgSrc: eCommerce,
-      link: "https://github.com/MOHDTOUFEEQ/Ecommerce",
-      buttonLabel: "Visit E-Commerce",
+      link: "https://instagram-clone-zeta-three-95.vercel.app/",
+      buttonLabel: "Visit Messenger",
       languages: projectLanguages.eCommerce,
     },
   ];

@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import screenshot1 from "../../assets/Screenshot 2023-11-19 211048.png";
 import screenshot3 from "../../assets/Screenshot3.png";
 import animate1 from "../../assets/animate1.png";
-import animate4 from "../../assets/animate4.png";
+import animate4 from "../../assets/mystry1.png"; //
 import blog from "../../assets/blog.png";
 import mystryMessage from "../../assets/Mystry_Message-removebg-preview.png";
-import eCommerce from "../../assets/eCommerce.webp";
-import animate2 from "../../assets/animate2.png";
-import animate3 from "../../assets/animate3.png";
+import eCommerce from "../../assets/Instagram_DP.jpeg";
+import animate2 from "../../assets/blog1.png";
+import animate3 from "../../assets/animatePic.jpg";
 import gsap from "gsap";
 
 function BigScreenProject() {
@@ -55,7 +54,7 @@ function BigScreenProject() {
 
     setupMouseEffects(".cnt", ".cnt img", "#b4bacf", "MY BLOG");
     setupMouseEffects(".cnt2", ".cnt2 img", "#ffbc99", "Mystry App");
-    setupMouseEffects(".cnt3", ".cnt3 img", "rgb(219, 202, 189)", "E-Commerce");
+    setupMouseEffects(".cnt3", ".cnt3 img", "rgb(219, 202, 189)", "Instagram Clone");
 
     gsap.set("#text2", { x: "70%" });
     gsap.set("#text1", { x: "-30%" });
@@ -84,13 +83,11 @@ function BigScreenProject() {
   }, []);
 
   // Common Languages Used Section
-  const languages1 = [
+  const languages1 = ["HTML", "CSS","Tailwind CSS","JavaScript", "React.js","React Hook Form", "Appwrite", "JWT (JSON Web Token)"]
+  const languages2 = [
     "JavaScript", "React", "Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "React Hook form", "Next Auth"
   ];
-  const languages2 = [
-    "HTML", "CSS", "BOOTSTRAP", "JQUERY", "PYTHON", "DJANGO"
-  ];
-
+  const languages3 = ["JavaScript", "React.js","React Hook Form", "Appwrite", "TawilWind"]
   return (
     <div id="projects">
       <div className="mouse">
@@ -103,7 +100,7 @@ function BigScreenProject() {
           </div>
           <div className="magic_down">
             <img src={animate1} alt="Animation 1" />
-            <img src={screenshot1} alt="Screenshot 1" />
+            <img src={animate2} alt="Screenshot 1" />
             <img src={screenshot3} alt="Screenshot 3" />
             <img src={animate4} alt="Animation 4" />
           </div>
@@ -139,13 +136,13 @@ function BigScreenProject() {
         </a>
         </div>
 
-        <div className="cnt2"  style={{border:".5px solid rgb(141, 152, 142)"}}>
+        <div className="cnt2"  style={{border:".5px solid rgb(141, 152, 142)", cursor:"none"}}>
         <a className="text-decoration-none text-black" target="_blank" href="https://mystry-messages-kohl.vercel.app/">
         <div className="languages-used" style={{
             height: "25%", background: "#ffffff", width: "100%", display: "flex", flexWrap: "wrap",
             justifyContent: "center", alignItems: "center", padding: "10px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)"
           }}>
-            {languages1.map((lang, index) => (
+            {languages2.map((lang, index) => (
               <span key={index} style={{
                 fontSize: "16px", fontWeight: "500", color: "#333", margin: "5px", padding: "8px 15px",
                 border: "2px solid black", borderRadius: "5px", backgroundColor: "#fff", transition: "all 0.3s ease"
@@ -186,13 +183,13 @@ function BigScreenProject() {
           </div>
         </div>
         <div className="cnt3"  style={{border:".5px solid rgb(141, 152, 142)"}}>
-        <a className="text-decoration-none text-black" target="_blank" href="https://github.com/MOHDTOUFEEQ/Ecommerce">
+        <a className="text-decoration-none text-black" target="_blank" href="https://instagram-clone-zeta-three-95.vercel.app/">
         <div className="languages-used" style={{
             height: "20%", background: "#fff", width: "100%", borderTopLeftRadius: "50px",
             borderTopRightRadius: "50px", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center",
             padding: "10px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)"
           }}>
-            {languages2.map((lang, index) => (
+            {languages3.map((lang, index) => (
               <span key={index} style={{
                 fontSize: "16px", fontWeight: "500", color: "#333", margin: "5px", padding: "8px 15px",
                 border: "2px solid black", borderRadius: "5px", backgroundColor: "#fff", transition: "all 0.3s ease"
@@ -202,17 +199,11 @@ function BigScreenProject() {
             ))}
           </div>
           <div style={{ height: "80%" }}>
-            <div>
-
-            <a className="cuberto" target="_blank" href="https://github.com/MOHDTOUFEEQ/Ecommerce">
+            <div className="justify-center align-center h-4/5" style={{display:'flex',height:"80%"}}>
               <img src={eCommerce} style={{height:"100%", width:"100%"}} alt="Salon" />
-            </a>
-            </div>
+            </div>   
             <div>
-
-            <a target="_blank" className="salon_link" style={{ position:"relative", top:"5vh",textDecoration: "none" }} href="https://salon-gold.vercel.app/">
-              <button className="cnt_info" style={{ border:"1px solid black",fontSize:"1.1rem"}}>E-Commerce</button>
-            </a>
+              <button className="p-10px" style={{     border: "1px solid #404040",fontSize: "1rem",position: "relative",bottom: '10px',left: "4vw",background:"#ffffff", padding:"13px",borderRadius:"13px", fontWeight:"500"}}>Instagram Clone</button>
             </div>
           </div>
           </a>

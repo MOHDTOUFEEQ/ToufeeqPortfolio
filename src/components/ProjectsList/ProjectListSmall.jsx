@@ -1,4 +1,4 @@
-import DjangoLogo from "../../assets/django1-removebg-preview.png";
+import DjangoLogo from "../../assets/django.png";
 import JavaScriptLogo from "../../assets/JavaScript-logo.png";
 
 function SmallScreenProjects() {
@@ -8,42 +8,41 @@ function SmallScreenProjects() {
           link: "https://github.com/MOHDTOUFEEQ/Django-Projects/tree/main/Django_Chatting_App",
           image: DjangoLogo,
           name: "Django Chatting App",
+          techStack: ["Python", "Django", "HTML", "CSS", "JavaScript"],
         },
         {
           id: "pr3",
           link: "https://github.com/MOHDTOUFEEQ/Django-Projects/tree/main/Django-PizzaStore",
           image: DjangoLogo,
           name: "The Pizza Haven",
+          techStack: ["Python", "Django", "HTML", "CSS", "JavaScript"],
         },
         {
           id: "pr5",
           link: "https://film-uwl.github.io/",
-          image: JavaScriptLogo,
-          name: "UWL Film Society",
+          image: DjangoLogo,
+          name: "E-Commerce",
+          techStack: ["Python", "Django", "HTML", "CSS", "JavaScript"],
         },
         {
           id: "pr2",
           link: "https://github.com/MOHDTOUFEEQ/JavaScript-Projects/tree/main/JavaScript_weatherApp",
           image: JavaScriptLogo,
           name: "WeatherWhiz",
-        },
-        {
-          id: "pr4",
-          link: "https://github.com/MOHDTOUFEEQ/JavaScript-Projects/tree/main/JavaScript_PasswordGenerator",
-          image: JavaScriptLogo,
-          name: "SecureKey Creator",
+          techStack: ["JavaScript", "HTML", "CSS", "APIs", "JSON"],
         },
       ];
     
       return (
         <div id="projectsList" style={styles.container}>
           {projects.map((project) => (
-            <div key={project.id} style={styles.projectRow}>
+            <div key={project.id} className={`firstproject ${project.id}`} style={styles.projectRow}>
               <div style={styles.logoContainer}>
                 <img src={project.image} alt={project.name} style={styles.logo} />
               </div>
               <div style={styles.details}>
                 <p style={styles.projectName}>{project.name}</p>
+                <p style={styles.techStack}>[{project.techStack.join(", ")}]</p>
               </div>
               <div style={styles.buttonContainer}>
                 <button
@@ -71,7 +70,7 @@ function SmallScreenProjects() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "46px 15px",
+        padding: "35px 15px",
         backgroundColor: "#fff",
         borderRadius: "8px",
         boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
@@ -96,6 +95,12 @@ function SmallScreenProjects() {
         fontWeight: "600",
         color: "#333",
         margin: "0",
+      },
+      techStack: {
+        fontSize: "0.85rem",
+        fontWeight: "400",
+        color: "#555",
+        marginTop: "5px",
       },
       buttonContainer: {
         flex: "0 0 auto",

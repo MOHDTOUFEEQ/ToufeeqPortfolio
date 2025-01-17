@@ -1,171 +1,117 @@
 import { useEffect } from 'react';
-import DjangoLogo from '../../assets/django1-removebg-preview.png';
+import DjangoLogo from '../../assets/django.png';
 import JavaScriptLogo from '../../assets/JavaScript-logo.png';
-import nextJs from '../../assets/nextJs.png';
 
 function rotating(elementSelector) {
-    const mouseElement = document.querySelector(".upperrotating_div");
-    const screenWidth = window.innerWidth;
-  
-    if (screenWidth > 768) {
-      const targetElement = document.querySelector(elementSelector);
-  
-      if (targetElement) {
-        targetElement.addEventListener("mousemove", function (dets) {
-          const mouseX = dets.pageX;
-          const mouseY = dets.pageY;
-          mouseElement.style.opacity = "1";
+  const mouseElement = document.querySelector(".upperrotating_div");
+  const targetElement = document.querySelector(elementSelector);
+  const screenWidth = window.innerWidth;
 
-          mouseElement.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-        });
-  
-        targetElement.addEventListener("mouseleave", function () {
-          mouseElement.style.opacity = "0";
-        });
-      }
-    }
+  if (screenWidth > 768 && targetElement) {
+    targetElement.addEventListener("mousemove", (dets) => {
+      mouseElement.style.opacity = "1";
+      mouseElement.style.transform = `translate(${dets.pageX}px, ${dets.pageY}px)`;
+    });
+
+    targetElement.addEventListener("mouseleave", () => {
+      mouseElement.style.opacity = "0";
+    });
   }
+}
+
 function ProjectListLarge() {
-      useEffect(() => {
+  useEffect(() => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth > 768) {
+      const projectClasses = [".pr1", ".pr2", ".pr3", ".pr4", ".pr5"];
+      projectClasses.forEach(cls => rotating(cls));
+    }
 
-        const screenWidth = window.innerWidth;
-        if (screenWidth > 768) {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth > 768) {
+        const projectClasses = [".pr1", ".pr2", ".pr3", ".pr4", ".pr5"];
+        projectClasses.forEach(cls => rotating(cls));
+      }
+    };
 
-          rotating(".pr1");
-          rotating(".pr2");
-          rotating(".pr3");
-          rotating(".pr4");
-          rotating(".pr5");
-        }
+    window.addEventListener("resize", handleResize);
     
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-        const handleResize = () => {
-          const screenWidth = window.innerWidth;
-          if (screenWidth > 768) {
+  const projects = [
+    {
+      className: "pr1",
+      url: "https://github.com/MOHDTOUFEEQ/Django-Projects/tree/main/Django_Chatting_App",
+      logo: DjangoLogo,
+      alt: "Django Chatting App",
+      name: "Django Chatting App",
+      languages: ["Python", "Django", "HTML", "CSS", "JavaScript", "Bootstrap"]
+    },
+    {
+      className: "pr3",
+      url: "https://github.com/MOHDTOUFEEQ/Django-Projects/tree/main/Django-PizzaStore",
+      logo: DjangoLogo,
+      alt: "The Pizza Haven",
+      name: "The Pizza Haven",
+      languages: ["Python", "Django", "HTML", "CSS", "JavaScript", "Bootstrap"]
+    },
+    {
+      className: "pr5",
+      url: "https://github.com/MOHDTOUFEEQ/Ecommerce",
+      logo: DjangoLogo,
+      alt: "E-Commerce",
+      name: "E-Commerce",
+      languages: ["Python", "Django", "HTML", "CSS", "JavaScript", "Bootstrap"]
+    },
+    {
+      className: "pr2",
+      url: "https://github.com/MOHDTOUFEEQ/JavaScript-Projects/tree/main/JavaScript_weatherApp",
+      logo: JavaScriptLogo,
+      alt: "WeatherWhiz",
+      name: "WeatherWhiz",
+      languages: ["JavaScript", "HTML", "CSS", "APIs", "JSON"]
+    },
+    {
+      className: "pr4",
+      url: "https://github.com/MOHDTOUFEEQ/JavaScript-Projects/tree/main/JavaScript_PasswordGenerator",
+      logo: JavaScriptLogo,
+      alt: "SecureKey Creator",
+      name: "SecureKey Creator",
+      languages: ["JavaScript", "HTML", "CSS"]
+    }
+  ];
 
-            rotating(".pr1");
-            rotating(".pr2");
-            rotating(".pr3");
-            rotating(".pr4");
-            rotating(".pr5");
-          }
-        };
-    
-        window.addEventListener("resize", handleResize);
-    
-        
-        return () => {
-          window.removeEventListener("resize", handleResize);
-        };
-      }, []);
   return (
-   <div id="projectsList">
-         <div className="upperrotating_div">
-           <div className="rotating-div">
-             <p className="text">Click, Me!</p>
-           </div>
-         </div>
-         <div className="firstproject pr1">
-           <a
-             id="link_to_project_github"
-             href="https://github.com/MOHDTOUFEEQ/Django-Projects/tree/main/Django_Chatting_App"
-             target="_blank"
-             rel="noopener noreferrer"
-           >
-             <div className="flex">
-               <div className="firstproject_left">
-                 <img src={DjangoLogo} alt="Django Chatting App" />
-                 <i className="fa-solid fa-minus"></i>
-                 <span className="project_name">Django Chatting App</span>
-               </div>
-               <div className="firstproject_right">
-                 <button>Click to preview</button>
-               </div>
-             </div>
-           </a>
-           <hr />
-         </div>
-         <div className="firstproject pr3">
-           <a
-             id="link_to_project_github3"
-             href="https://github.com/MOHDTOUFEEQ/Django-Projects/tree/main/Django-PizzaStore"
-             target="_blank"
-             rel="noopener noreferrer"
-           >
-             <div className="flex">
-               <div className="firstproject_left">
-                 <img src={DjangoLogo} alt="The Pizza Haven" />
-                 <i className="fa-solid fa-minus"></i>
-                 <span className="project_name">The Pizza Haven</span>
-               </div>
-               <div className="firstproject_right">
-                 <button>Click to preview</button>
-               </div>
-             </div>
-           </a>
-           <hr />
-         </div>
-         <div className="firstproject pr5">
-           <a
-             id="link_to_project_github5"
-             href="https://film-uwl.github.io/"
-             target="_blank"
-             rel="noopener noreferrer"
-           >
-             <div className="flex">
-               <div className="firstproject_left">
-                 <img className="js_photo" src={nextJs} alt="UWL Film Society" />
-                 <i className="fa-solid fa-minus"></i>
-                 <span className="project_name">Mystry Messages</span>
-               </div>
-               <div className="firstproject_right">
-                 <button>Click to preview</button>
-               </div>
-             </div>
-           </a>
-           <hr />
-         </div>
-         <div className="firstproject pr2">
-           <a
-             id="link_to_project_github2"
-             href="https://github.com/MOHDTOUFEEQ/JavaScript-Projects/tree/main/JavaScript_weatherApp"
-             target="_blank"
-             rel="noopener noreferrer"
-           >
-             <div className="flex">
-               <div className="firstproject_left">
-                 <img className="js_photo" src={JavaScriptLogo} alt="WeatherWhiz" />
-                 <i className="fa-solid fa-minus"></i>
-                 <span className="project_name">WeatherWhiz</span>
-               </div>
-               <div className="firstproject_right">
-                 <button>Click to preview</button>
-               </div>
-             </div>
-           </a>
-           <hr />
-         </div>
-         <div className="firstproject pr4">
-           <a
-             id="link_to_project_github4"
-             href="https://github.com/MOHDTOUFEEQ/JavaScript-Projects/tree/main/JavaScript_PasswordGenerator"
-             target="_blank"
-             rel="noopener noreferrer"
-           >
-             <div className="flex">
-               <div className="firstproject_left">
-                 <img className="js_photo" src={JavaScriptLogo} alt="SecureKey Creator" />
-                 <i className="fa-solid fa-minus"></i>
-                 <span className="project_name">SecureKey Creator</span>
-               </div>
-               <div className="firstproject_right">
-                 <button>Click to preview</button>
-               </div>
-             </div>
-           </a>
-           <hr />
-         </div>
-       </div>
+    <div id="projectsList">
+      <div className="upperrotating_div">
+        <div className="rotating-div">
+          <p className="text">Click, Me!</p>
+        </div>
+      </div>
+      {projects.map(({ className, url, logo, alt, name, languages }, index) => (
+        <div key={index} className={`firstproject ${className}`} style={{ cursor: "none" }}>
+          <a href={url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+            <div className="flex">
+              <div className="firstproject_left" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '2vw' }}>
+                <img src={logo} alt={alt} />
+                <i className="fa-solid fa-minus"></i>
+                <span className="project_name">{name}</span>
+                {/* Displaying languages array */}
+                <span className="project_languages" style={{ marginLeft: '10px', fontSize: '0.9rem', color: 'gray' }}>
+                  [{languages.join(', ')}]
+                </span>
+              </div>
+              <div className="firstproject_right">
+                <button>Click to preview</button>
+              </div>
+            </div>
+          </a>
+          <hr />
+        </div>
+      ))}
+    </div>
   );
 }
 
