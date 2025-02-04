@@ -13,7 +13,7 @@ A personal portfolio website showcasing my skills, experience, and projects as a
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/MOHDTOUFEEQ/portfolio.git
+   git clone https://github.com/MOHDTOUFEEQ/ToufeeqPortfolio.git
 2. Install dependencies:
    ```bash
     cd myblogs
