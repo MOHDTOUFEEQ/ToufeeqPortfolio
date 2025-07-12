@@ -1,10 +1,15 @@
 import blog from "../../assets/blog.png";
+import hackaton from "../../assets/hackaton.jpeg";
 import mystryMessage from "../../assets/Mystry_Message-removebg-preview.png";
 import eCommerce from "../../assets/Instagram_DP.jpeg";
 import gsap from "gsap";
 import { useEffect } from "react";
 
 const projectLanguages = {
+  game: [
+    "React.js", "Vite", "HTML Canvas", "JavaScript",
+    "FastAPI", "Python", "MySQL", "Solana Wallet", "Web3", "AI Image Gen"
+  ],
   blog: ["HTML", "CSS","Tailwind CSS","JavaScript", "React.js","React Hook Form", "Appwrite", "JWT (JSON Web Token)"],
   mystryMessages:[
     "JavaScript", "React", "Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "React Hook form", "Next Auth"
@@ -20,6 +25,13 @@ function SmallScreenProject() {
   }, []);
 
   const projects = [
+    {
+      title: "Megathron Game",
+      imgSrc: hackaton, // Optional: Replace with a local image if needed
+      link: "https://monster-hunter-five.vercel.app/",
+      buttonLabel: "Play Megathron Online",
+      languages: projectLanguages.game,
+    },
     {
       title: "My Blog",
       imgSrc: blog,

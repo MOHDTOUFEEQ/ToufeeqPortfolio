@@ -157,7 +157,7 @@ html, body{
 .web{
   width: 80%;
   height: 60vh;
-  padding-top: 5vw;
+  padding-top: 10vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,8 +183,8 @@ html, body{
   bottom: 10px;
 }
 .weblogo {
-  width: 25em; /* You can use any desired value and unit */
-  height: 18em;
+  width: 32em; /* You can use any desired value and unit */
+  height: 23em;
   z-index: 3;
   background-color: transparent;
   position: relative;

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import webRemovebgPreview from "../..//assets/web-removebg-preview.png";
+import webRemovebgPreview from "../..//assets/software.png";
 import gsap from "gsap";
 import { ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/all";
 

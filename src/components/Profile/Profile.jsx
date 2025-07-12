@@ -39,23 +39,24 @@ function Profile() {
       </div>
 
       <div className="About">
-        <div className="abovetop">
-          <h1>About</h1>
-          <p>
-          I am a second-year Computer Science student at the University of West London, passionate about web development and full-stack design. Over the past year, I have gained extensive experience in building dynamic, responsive, and user-friendly web interfaces. My expertise spans JavaScript (ES6+), React.js, Next.js, TypeScript, HTML5, CSS3, Tailwind, and libraries like Redux and GSAP, enabling me to create interactive, visually appealing applications.
-          <br />
-            <br />
-            On the back end, I specialize in Python and Django for robust server-side development. I frequently integrate RESTful APIs and work with databases like MongoDB and MySQL to ensure scalability. My recent projects include a user-focused salon website and a pizza quality classification system leveraging NLP.
-            <br />
-            <br />
-            {isLargeScreen &&(
-              <p>
-              I hold certifications in Django, jQuery, and MySQL, reflecting my commitment to continuous learning. Looking ahead, I aim to master tools like Next.js and TypeScript to build innovative, future-ready applications that align with both user and business needs.
-              </p>
-          )}
-            </p>
-        </div>
-      </div>
+  <div className="abovetop">
+    <h1>About</h1>
+    <p>
+      I am a final-year Computer Science student at the University of West London, a passionate Software Engineer and Full Stack Developer focused on creating responsive, scalable, and user-friendly web applications. My work blends technical precision with thoughtful design to deliver modern digital experiences.
+      <br />
+      <br />
+      I specialize in front-end development using JavaScript (ES6+), TypeScript, React.js, Next.js, Tailwind CSS, and animation libraries like GSAP and Framer Motion. I build dynamic UIs backed by robust state management and responsive layouts.
+      <br />
+      <br />
+      {isLargeScreen && (
+        <p>
+          On the back end, I work with Python, Django, MongoDB, and MySQL—designing secure, efficient APIs with modern authentication systems like JWT, OAuth, and NextAuth.js. I’ve applied CI/CD pipelines, cloud deployment, and RESTful architecture to real-world applications with a strong focus on performance and maintainability.
+        </p>
+      )}
+    </p>
+  </div>
+</div>
+
     </div>
   );
 }

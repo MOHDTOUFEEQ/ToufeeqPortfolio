@@ -42,6 +42,23 @@ function ProjectListLarge() {
 
   const projects = [
     {
+        className: "pr1",
+        url: "https://monster-hunter-five.vercel.app/", // replace with actual GitHub repo if different
+        logo: JavaScriptLogo, // optional: use a custom pixel-art or game icon if you have one
+        alt: "Megathron Game",
+        name: "Megathron — 8-Bit Web3 Shooter",
+        languages: [
+          "React.js (Vite)",
+          "HTML Canvas",
+          "FastAPI",
+          "Python",
+          "Solana Wallet",
+          "MySQL",
+          "AI Image Generation",
+          "Web3"
+        ]
+      },
+    {
       className: "pr1",
       url: "https://github.com/MOHDTOUFEEQ/Django-Projects/tree/main/Django_Chatting_App",
       logo: DjangoLogo,
@@ -72,14 +89,6 @@ function ProjectListLarge() {
       alt: "WeatherWhiz",
       name: "WeatherWhiz",
       languages: ["JavaScript", "HTML", "CSS", "APIs", "JSON"]
-    },
-    {
-      className: "pr4",
-      url: "https://github.com/MOHDTOUFEEQ/JavaScript-Projects/tree/main/JavaScript_PasswordGenerator",
-      logo: JavaScriptLogo,
-      alt: "SecureKey Creator",
-      name: "SecureKey Creator",
-      languages: ["JavaScript", "HTML", "CSS"]
     }
   ];
 
