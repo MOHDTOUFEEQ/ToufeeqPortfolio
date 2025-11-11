@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import SmallScreenProjects from "./SmallScreenProjects";
 import BigScreenProject from "./BigScreenProject";
+import { LampDemo1 } from "../LampDemo1";
+import { VortexDemo1 } from "../VortexDemo1";
 
 function Projects() {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1000);

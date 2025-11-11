@@ -93,7 +93,7 @@ function ProjectListLarge() {
   ];
 
   return (
-    <div id="projectsList">
+    <div id="projectsList" style={{backgroundColor: 'white !important'}}>
       <div className="upperrotating_div">
         <div className="rotating-div">
           <p className="text">Click, Me!</p>

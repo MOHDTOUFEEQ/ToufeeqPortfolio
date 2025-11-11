@@ -35,6 +35,7 @@ function Talk() {
         <label htmlFor="name">Name</label>
         <input
           type="text"
+          style={{backgroundColor: '#ffffff', color: '#000000', border: '2px solid rgb(0, 0, 0)'}}
           name="name"
           id="name"
           required
@@ -43,6 +44,7 @@ function Talk() {
         <label htmlFor="email">Email Address</label>
         <input
           type="email"
+          style={{backgroundColor: '#ffffff', color: '#000000', border: '2px solid rgb(0, 0, 0)'}}
           name="email"
           id="email"
           required
@@ -50,6 +52,7 @@ function Talk() {
 
         <label htmlFor="message">Message</label>
         <textarea
+          style={{backgroundColor: '#ffffff', color: '#000000', border: '2px solid rgb(0, 0, 0)'}}
           name="message"
           id="message"
           rows="5"

@@ -34,11 +34,7 @@ function Navbar() {
           ease: "expo", 
         }
       )
-      .fromTo(
-        ".developer h1",
-        { bottom: "-140px" }, 
-        { bottom: "0", duration: 3, delay: -5 }
-      )
+      // Removed .developer h1 animation as it's no longer in the component structure
       .fromTo(
         ".weblogo",
         { left: "10vw" }, 
