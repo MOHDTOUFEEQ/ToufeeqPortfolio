@@ -92,7 +92,7 @@ function SmallScreenDeveloper() {
         <img className="weblogo" src={webRemovebgPreview} alt="weblogo" />
       </div>
       <div id="svg-container">
-        <a href="./Toufeeq_Mohammed_CV.pdf" download="Toufeeq_CV" id="download_cv">
+        <a href="./Resume.pdf" download="Toufeeq_CV" id="download_cv">
           <button id="download-cv">Download CV</button>
         </a>
         <div className="svg-wrapper">
@@ -248,7 +248,7 @@ function SmallScreenDeveloper() {
 
         </div>
       </div>
-      <a href="#projectsList" className="go_down" style={{ textDecoration: 'none'}}>
+      <a href="#projectsList" className="go_down" style={{ textDecoration: 'none',position:'relative',top:'2vh'}}>
         <div className="down">
           <i className="fa-solid fa-chevron-down"></i>
         </div>

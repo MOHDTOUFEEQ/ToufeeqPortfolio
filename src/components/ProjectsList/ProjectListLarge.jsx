@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import DjangoLogo from '../../assets/django.png';
 import JavaScriptLogo from '../../assets/JavaScript-logo.png';
+import reactLogo from '../../assets/react.png';
+import deepLearningLogo from '../../assets/deepLearning.jpg';
 
 function rotating(elementSelector) {
   const mouseElement = document.querySelector(".upperrotating_div");
@@ -39,58 +41,59 @@ function ProjectListLarge() {
     
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+const projects = [
+  {
+    className: "pr1",
+    url: "https://monster-hunter-five.vercel.app/",
+    logo: reactLogo,
+    alt: "Megathron Game",
+    name: "⭐ Megathron — 8-Bit Web3 Shooter",
+    languages: [
+      "React.js (Vite)",
+      "HTML Canvas",
+      "FastAPI",
+      "Python",
+      "Solana Wallet",
+      "MySQL",
+      "AI Image Generation",
+      "Web3"
+    ]
+  },
+  {
+    className: "pr2",
+    url: "https://github.com/MOHDTOUFEEQ/Fruit-Vegetables_Classficaitaion",
+    logo: "https://cdn-icons-png.flaticon.com/512/8365/8365406.png",
+    alt: "Fruit & Vegetable Classification",
+    name: "Fruit & Vegetable Classification (Deep Learning)",
+    languages: ["Python", "TensorFlow", "Keras", "NumPy", "Pandas", "OpenCV", "Matplotlib"]
+  },
+  {
+    className: "pr3",
+    url: "https://instagram-clone-zeta-three-95.vercel.app/",
+    logo: reactLogo,
+    alt: "Instagram Clone",
+    name: "Instagram Clone",
+    languages: ["JavaScript", "React.js", "React Hook Form", "Appwrite", "Tailwind"]
+  },
+  {
+    className: "pr4",
+    url: "https://github.com/MOHDTOUFEEQ/Django-Projects/tree/main/Django_Chatting_App",
+    logo: DjangoLogo,
+    alt: "Django Chatting App",
+    name: "Django Chatting App",
+    languages: ["Python", "Django", "HTML", "CSS", "JavaScript", "Bootstrap"]
+  },
+  {
+    className: "pr5",
+    url: "https://github.com/MOHDTOUFEEQ/Ecommerce",
+    logo: DjangoLogo,
+    alt: "E-Commerce",
+    name: "E-Commerce",
+    languages: ["Python", "Django", "HTML", "CSS", "JavaScript", "Bootstrap"]
+  }
+];
 
-  const projects = [
-    {
-        className: "pr1",
-        url: "https://monster-hunter-five.vercel.app/", // replace with actual GitHub repo if different
-        logo: JavaScriptLogo, // optional: use a custom pixel-art or game icon if you have one
-        alt: "Megathron Game",
-        name: "Megathron — 8-Bit Web3 Shooter",
-        languages: [
-          "React.js (Vite)",
-          "HTML Canvas",
-          "FastAPI",
-          "Python",
-          "Solana Wallet",
-          "MySQL",
-          "AI Image Generation",
-          "Web3"
-        ]
-      },
-    {
-      className: "pr1",
-      url: "https://github.com/MOHDTOUFEEQ/Django-Projects/tree/main/Django_Chatting_App",
-      logo: DjangoLogo,
-      alt: "Django Chatting App",
-      name: "Django Chatting App",
-      languages: ["Python", "Django", "HTML", "CSS", "JavaScript", "Bootstrap"]
-    },
-    {
-      className: "pr3",
-      url: "https://github.com/MOHDTOUFEEQ/Django-Projects/tree/main/Django-PizzaStore",
-      logo: DjangoLogo,
-      alt: "The Pizza Haven",
-      name: "The Pizza Haven",
-      languages: ["Python", "Django", "HTML", "CSS", "JavaScript", "Bootstrap"]
-    },
-    {
-      className: "pr5",
-      url: "https://github.com/MOHDTOUFEEQ/Ecommerce",
-      logo: DjangoLogo,
-      alt: "E-Commerce",
-      name: "E-Commerce",
-      languages: ["Python", "Django", "HTML", "CSS", "JavaScript", "Bootstrap"]
-    },
-    {
-      className: "pr2",
-      url: "https://github.com/MOHDTOUFEEQ/JavaScript-Projects/tree/main/JavaScript_weatherApp",
-      logo: JavaScriptLogo,
-      alt: "WeatherWhiz",
-      name: "WeatherWhiz",
-      languages: ["JavaScript", "HTML", "CSS", "APIs", "JSON"]
-    }
-  ];
+
 
   return (
     <div id="projectsList" style={{backgroundColor: 'white !important'}}>

@@ -85,7 +85,7 @@ export function VortexDemo1() {
             crafting digital experiences.
           </p>
 
-          <a href="./Toufeeq_Mohammed_CV.pdf" download="Toufeeq_CV">
+          <a href="./Resume.pdf" download="Toufeeq_CV">
             <button
               className="download-btn px-6 py-3 w-[150px] bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white text-lg font-semibold rounded-xl shadow-md hover:shadow-blue-500/40 transition-all duration-300 ease-in-out"
               style={{ opacity: 0 }}

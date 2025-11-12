@@ -586,7 +586,7 @@ html, body{
 .cnt2{
   width: 30%;
   min-height: 81vh;
-  background-color: #e7e6ee;
+  background-color: #ffffff;
   overflow: hidden;
   border-radius: 50px;
   cursor: none;
@@ -730,8 +730,8 @@ html, body{
 }
 .mouse .magic_top .magic2{
   margin-top: 2px;
-  width: 30%;
-  height: 30px;
+  width: 33%;
+  height: 53px;
   background-color: white;
   border: 2px solid white;
   border-radius: 20px;
@@ -1092,6 +1092,7 @@ form textarea{
   letter-spacing: .1rem;
   position: relative;
   right: 1.5vw;
+  color: black;
 }
 .firstproject:hover{
   background-color: black;

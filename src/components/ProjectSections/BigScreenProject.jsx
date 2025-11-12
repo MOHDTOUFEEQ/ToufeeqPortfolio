@@ -2,15 +2,12 @@ import { useEffect, useState } from "react";
 import screenshot3 from "../../assets/Screenshot3.png";
 import animate1 from "../../assets/animate1.png";
 import animate4 from "../../assets/mystry1.png";
-import blog from "../../assets/blog.png";
-import mystryMessage from "../../assets/Mystry_Message-removebg-preview.png";
-import eCommerce from "../../assets/Instagram_DP.jpeg";
 import animate2 from "../../assets/blog1.png";
 import animate3 from "../../assets/animatePic.jpg";
 import gsap from "gsap";
 
 function BigScreenProject() {
-  const [currentProject, setCurrentProject] = useState("SALON");
+  const [currentProject, setCurrentProject] = useState("AI-Based System");
 
   useEffect(() => {
     const setupMouseEffects = (elementSelector, imgSelector, backgroundColor, projectName) => {
@@ -26,19 +23,16 @@ function BigScreenProject() {
         mouseElement.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
         image.style.filter = "grayscale(100%)";
 
-        // Set project title and background
         document.querySelectorAll(".pack1, #home, #projects").forEach((el) => {
           el.style.backgroundColor = backgroundColor;
         });
 
         setCurrentProject(projectName);
 
-        // 🧩 Hide all images first (fix for first image lingering)
         document.querySelectorAll(".magic_down img").forEach((img) => {
           img.style.opacity = "0";
         });
 
-        // Fade all images in smoothly and evenly
         gsap.to(".magic_down img", {
           opacity: 1,
           stagger: 0.2,
@@ -52,7 +46,6 @@ function BigScreenProject() {
         mouseElement.style.display = "none";
         image.style.filter = "grayscale(0%)";
 
-        // 🧩 Hide all images again to reset
         document.querySelectorAll(".magic_down img").forEach((img) => {
           gsap.to(img, { opacity: 0, duration: 0.3 });
         });
@@ -71,10 +64,10 @@ function BigScreenProject() {
       };
     };
 
-    // Set up hover triggers
-    setupMouseEffects(".cnt", ".cnt img", "#b4bacf", "MY BLOG");
-    setupMouseEffects(".cnt2", ".cnt2 img", "#ffbc99", "Mystry App");
-    setupMouseEffects(".cnt3", ".cnt3 img", "rgb(219, 202, 189)", "Instagram Clone");
+    // Updated hover titles
+    setupMouseEffects(".cnt", ".cnt img", "#b4bacf", "AI-Based Attendance System");
+    setupMouseEffects(".cnt2", ".cnt2 img", "#ffbc99", "Mystery Message Platform");
+    setupMouseEffects(".cnt3", ".cnt3 img", "rgb(219, 202, 189)", "MyBlogs Platform");
 
     // Text animations
     gsap.set("#text2", { x: "70%" });
@@ -103,10 +96,10 @@ function BigScreenProject() {
     };
   }, []);
 
-  // Tech stack display
-  const languages1 = ["HTML", "CSS", "Tailwind CSS", "JavaScript", "React.js", "React Hook Form", "Appwrite", "JWT (JSON Web Token)"];
-  const languages2 = ["JavaScript", "React", "Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "React Hook Form", "Next Auth"];
-  const languages3 = ["JavaScript", "React.js", "React Hook Form", "Appwrite", "Tailwind"];
+  // Updated tech stacks
+  const languages1 = ["Python", "Flask", "TensorFlow", "YOLOv8", "OpenCV", "React.js", "MongoDB"];
+  const languages2 = ["Next.js", "React", "TypeScript", "Tailwind CSS", "MongoDB", "Next Auth"];
+  const languages3 = ["React.js", "JavaScript", "Tailwind CSS", "Redux Toolkit", "Appwrite", "Zod", "JWT"];
 
   return (
     <div id="projects" style={{ backgroundColor: "black" }}>
@@ -120,17 +113,22 @@ function BigScreenProject() {
           </div>
           <div className="magic_down">
             <img src={animate1} alt="Animation 1" />
-            <img src={animate2} alt="Screenshot 1" />
+            <img src={animate2} alt="Animation 2" />
             <img src={screenshot3} alt="Screenshot 3" />
             <img src={animate4} alt="Animation 4" />
           </div>
         </div>
       </div>
 
+      {/* PROJECT 1 - AI Attendance System */}
       <div className="pack" style={{ backgroundColor: "#0000" }}>
-        {/* PROJECT 1 */}
         <div className="cnt" style={{ border: ".5px solid rgb(141, 152, 142)" }}>
-          <a className="text-decoration-none text-black" target="_blank" href="https://myblog-git-main-mohd-toufeeqs-projects.vercel.app/">
+          <a
+            className="text-decoration-none text-black"
+            target="_blank"
+            href="https://github.com/MOHDTOUFEEQ/AI-student-attendance-system"
+            rel="noreferrer"
+          >
             <div
               className="languages-used"
               style={{
@@ -160,8 +158,12 @@ function BigScreenProject() {
                 </span>
               ))}
             </div>
-            <div className="min-h-[70%] bg-white h-auto" style={{position:'relative',top:'130px'}}>
-              <img className="h-full w-full" src="https://blog.paperspace.com/content/images/size/w1050/2020/01/Intro-HELLO-FUTURE-1920x1080_v2.gif" alt="Blog Project" />
+            <div className="min-h-[70%] bg-white h-auto" style={{ position: "relative", top: "130px" }}>
+              <img
+                className="h-full w-full"
+                src="https://blog.paperspace.com/content/images/size/w1050/2020/01/Intro-HELLO-FUTURE-1920x1080_v2.gif"
+                alt="AI Attendance System"
+              />
               <div className="bg-[#ffffff] absolute bottom-[10px] left-[7vw]">
                 <button
                   className="cnt_info"
@@ -173,16 +175,28 @@ function BigScreenProject() {
                     left: "-1.4vw",
                   }}
                 >
-                  View Blog!!
+                  AI-Based Attendance System
                 </button>
               </div>
             </div>
           </a>
         </div>
 
-        {/* PROJECT 2 */}
-        <div className="cnt2" style={{ border: ".5px solid rgb(141, 152, 142)", cursor: "none" }}>
-          <a className="text-decoration-none text-black" target="_blank" href="https://mystry-messages-kohl.vercel.app/">
+        {/* PROJECT 2 - Mystery Message Platform */}
+        <div
+          className="cnt2"
+          style={{
+            border: ".5px solid rgb(141, 152, 142)",
+            cursor: "none",
+            background: "white",
+          }}
+        >
+          <a
+            className="text-decoration-none text-black"
+            target="_blank"
+            href="https://mystry-messages-kohl.vercel.app/"
+            rel="noreferrer"
+          >
             <div
               className="languages-used"
               style={{
@@ -213,7 +227,11 @@ function BigScreenProject() {
               ))}
             </div>
             <div style={{ background: "#ffffff" }}>
-              <img src={mystryMessage} alt="Mystry App" style={{ height: "70%" }} />
+              <img
+                src="https://i.pinimg.com/originals/ec/ec/36/ecec3687a972a20d8ba953b7f1bf4e43.gif"
+                alt="Mystery Message Platform"
+                style={{ height: "300px" }}
+              />
               <button
                 className="cnt_info"
                 style={{
@@ -231,7 +249,7 @@ function BigScreenProject() {
         </div>
       </div>
 
-      {/* PROJECT 3 */}
+      {/* PROJECT 3 - MyBlogs Platform */}
       <div className="pack1" style={{ backgroundColor: "#0000" }}>
         <div className="mouse1">
           <div className="animatationbox1">
@@ -251,7 +269,12 @@ function BigScreenProject() {
         </div>
 
         <div className="cnt3" style={{ border: ".5px solid rgb(141, 152, 142)" }}>
-          <a className="text-decoration-none text-black" target="_blank" href="https://instagram-clone-zeta-three-95.vercel.app/">
+          <a
+            className="text-decoration-none text-black"
+            target="_blank"
+            href="https://www.toufeeqblogs.info/"
+            rel="noreferrer"
+          >
             <div
               className="languages-used"
               style={{
@@ -282,8 +305,15 @@ function BigScreenProject() {
               ))}
             </div>
             <div style={{ height: "80%" }}>
-              <div className="justify-center align-center" style={{ display: "flex", height: "80%" }}>
-                <img src={eCommerce} style={{ height: "100%", width: "100%" }} alt="Instagram Clone" />
+              <div
+                className="justify-center align-center"
+                style={{ display: "flex", height: "80%" }}
+              >
+                <img
+                  src="https://kraft.blog/uploads/blog-animated.gif"
+                  style={{ height: "70%", width: "100%", position: "relative", top: "15%" }}
+                  alt="MyBlogs Platform"
+                />
               </div>
               <button
                 style={{
@@ -298,7 +328,7 @@ function BigScreenProject() {
                   fontWeight: "500",
                 }}
               >
-                Instagram Clone
+                MyBlogs – Personal Blog Platform
               </button>
             </div>
           </a>
