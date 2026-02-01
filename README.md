@@ -1,8 +1,33 @@
-# React + Vite
+## Toufeeq Portfolio — Frontend Projects Showcase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio showcasing selected frontend and full-stack projects built with **React**, **Vite**, **TypeScript**, and modern web technologies. This repository reflects my ongoing growth as a frontend developer, with a focus on **clean UI**, **performance**, **animations**, and **maintainable code**.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
+- React.js  
+- Vite  
+- JavaScript (ES6+) / TypeScript  
+- Tailwind CSS  
+- GSAP (GreenSock Animation Platform)  
+- HTML5 & CSS3  
+- Git & GitHub  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Focus Areas
+- Responsive, mobile-first UI development  
+- Smooth, performant animations using GSAP  
+- Component-based architecture and reusable code  
+- Accessibility-aware layouts and interactions  
+- Clean styling and consistent design systems  
+
+## 📌 About This Portfolio
+This portfolio was originally created as a foundation project and has since been **iteratively updated** to better reflect my current frontend skill set. Recent updates include improved responsiveness, refined UI animations with GSAP, and cleaner component structure aligned with modern frontend best practices.
+
+## 🧩 What You’ll Find
+- Interactive UI components and animated sections  
+- Responsive layouts across devices and screen sizes  
+- Clean, reusable React components  
+- Projects demonstrating attention to detail and UX  
+
+## 🔧 Setup & Run Locally
+```bash
+npm install
+npm run dev
