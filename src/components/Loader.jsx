@@ -81,7 +81,7 @@ function Loader() {
       <div className="loader">
         <div className="toploader">
           <h3>PORTFOLIO</h3>
-          <h3>&#169; 2025</h3>
+          <h3>&#169; 2026</h3>
         </div>
         <div className="centerloader">
           <h1>

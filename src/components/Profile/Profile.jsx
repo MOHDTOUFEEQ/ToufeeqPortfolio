@@ -41,16 +41,16 @@ function Profile() {
       <div className="About">
   <div className="abovetop">
     <h1>About</h1>
-    <p>
-      I am a final-year Computer Science student at the University of West London, a passionate Software Engineer and Full Stack Developer focused on creating responsive, scalable, and user-friendly web applications. My work blends technical precision with thoughtful design to deliver modern digital experiences.
+    <p className="text-justify">
+     I'm an AI Engineer and Software Developer currently pursuing an MSc in Artificial Intelligence at the University of Edinburgh, following a First-Class BSc in Computer Science. My journey combines strong software engineering foundations with a growing focus on intelligent systems.
+    <br />
       <br />
-      <br />
-      I specialize in front-end development using JavaScript (ES6+), TypeScript, React.js, Next.js, Tailwind CSS, and animation libraries like GSAP and Framer Motion. I build dynamic UIs backed by robust state management and responsive layouts.
+      I work across Machine Learning, Natural Language Processing, Probabilistic Machine Learning, developing intelligent systems for solving complex real-world problems. My interest lies in combining strong theoretical foundations with practical engineering to build AI solutions that are reliable, scalable, and genuinely useful.
       <br />
       <br />
       {isLargeScreen && (
-        <p>
-          On the back end, I work with Python, Django, MongoDB, and MySQL—designing secure, efficient APIs with modern authentication systems like JWT, OAuth, and NextAuth.js. I’ve applied CI/CD pipelines, cloud deployment, and RESTful architecture to real-world applications with a strong focus on performance and maintainability.
+        <p className="text-justify">
+         Alongside AI, I have experience with Python, React, TypeScript, Django, Flask, REST APIs, MongoDB, and MySQL, allowing me to turn AI concepts into practical, scalable applications. I’m driven by curiosity, continuous learning, and building technology that creates real impact.
         </p>
       )}
     </p>

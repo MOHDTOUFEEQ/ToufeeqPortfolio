@@ -92,7 +92,7 @@ function SmallScreenDeveloper() {
         <img className="weblogo" src={webRemovebgPreview} alt="weblogo" />
       </div>
       <div id="svg-container">
-        <a href="./Resume.pdf" download="Toufeeq_CV" id="download_cv">
+        <a href="./Toufeeq_CV.pdf" download="Toufeeq_CV" id="download_cv">
           <button id="download-cv">Download CV</button>
         </a>
         <div className="svg-wrapper">
